@@ -46,5 +46,5 @@ class MoveRight : Command
 public static class CommandLog
 { 
     public static Queue<Command> commands1 = new Queue<Command>();
-    public static Queue<Command> commands2 = new Queue<Command>();
+    //public static Queue<Command> commands2 = new Queue<Command>(); //attempt at new feature
 }

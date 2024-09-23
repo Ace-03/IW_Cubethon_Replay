@@ -27,9 +27,7 @@ public class PlayerMovement : MonoBehaviour
             //rb.AddForce(sidewaysforce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
             //Take inputs and send them to command log
             Command moveRight = new MoveRight(rb, sidewaysforce);
-            Invoker invoker = new Invoker();
-            invoker.Setcommand(moveRight);
-            invoker.ExcuteCommand();
+            setInvoker(moveRight);
             Debug.Log("Input : Right");
         }
 
@@ -38,9 +36,7 @@ public class PlayerMovement : MonoBehaviour
             //rb.AddForce(-sidewaysforce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
             //Take inputs and send them to command log
             Command moveLeft = new MoveLeft(rb, sidewaysforce);
-            Invoker invoker = new Invoker();
-            invoker.Setcommand(moveLeft); 
-            invoker.ExcuteCommand();
+            setInvoker(moveLeft);
             Debug.Log("Input : Left");
         }
 
@@ -48,5 +44,11 @@ public class PlayerMovement : MonoBehaviour
         {
             FindObjectOfType<GameManager>().EndGame();
         }
+    }
+    private void setInvoker(Command move)
+    {
+        Invoker invoker = new Invoker();
+        invoker.Setcommand(move);
+        invoker.ExcuteCommand();
     }
 }
