@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
             command.playerBody = player.GetComponent<Rigidbody>();
             Invoker invoker = new Invoker();
             invoker.disableLog = true;
-            //invoker.Setcommand(command);
+            invoker.Setcommand(command);
             invoker.ExcuteCommand();
         }
     }
